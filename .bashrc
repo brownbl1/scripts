@@ -9,3 +9,6 @@ gi () {
 }
 
 alias spblock='forever start ~/cron/sab.json'
+
+# cp .bashrc ~ 
+# when done editing
