@@ -7,3 +7,5 @@ gi () {
   git config user.email "itslittlejohn@gmail.com"
   echo 'local git configured'
 }
+
+alias spblock='forever start ~/cron/sab.json'
