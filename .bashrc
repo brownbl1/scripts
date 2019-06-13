@@ -24,12 +24,36 @@ set_ip () {
   wifi=$(ip | grep 'Wi-Fi') # get specific line
   output=$(echo $wifi | sed 's/\x1b\[[0-9;]*m//g') # strip color codes
   ip=$(echo $output | sed 's/.*\s//') # parse ip address
-
+  
   react_native_packager_hostname=$ip
   export react_native_packager_hostname
-
+  
   echo $wifi
 }
 
-# cp .bashrc ~ 
+# alias cd/back
+
+pushd() {
+  if [ $# -eq 0 ]; then
+    DIR="${HOME}"
+  else
+    DIR="$1"
+  fi
+  
+  builtin pushd "${DIR}" > /dev/null
+}
+
+pushd_builtin() {
+  builtin pushd > /dev/null
+}
+
+popd() {
+  builtin popd > /dev/null
+}
+
+alias cd='pushd'
+alias back='popd'
+alias flip='pushd_builtin'
+
+# cp .bashrc ~
 # when done editing
