@@ -17,5 +17,7 @@ alias e.='explorer .'
 
 alias spblock='forever start ~/cron/sab.json'
 
+PROMPT_COMMAND='history -a'
+
 # cp .bashrc ~ 
 # when done editing
