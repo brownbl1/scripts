@@ -55,5 +55,10 @@ alias cd='pushd'
 alias back='popd'
 alias flip='pushd_builtin'
 
+inject() {
+  python /d/port/spatial-media-2.1/spatialmedia -i $1 ${1%.MP4}_inj.mp4
+}
+
+
 # cp .bashrc ~
 # when done editing
