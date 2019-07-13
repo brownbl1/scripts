@@ -55,10 +55,25 @@ alias cd='pushd'
 alias back='popd'
 alias flip='pushd_builtin'
 
+# video functions
+
 inject() {
   python /d/port/spatial-media-2.1/spatialmedia -i $1 ${1%.MP4}_inj.mp4
 }
 
+inject_dir() {
+  for i in $(ls *.MP4)
+  do
+    inject $i
+    rm $i
+  done
+}
+
+# k8s functions
+
+ke() {
+  kubectl exec -it $1 powershell
+}
 
 # cp .bashrc ~
 # when done editing
