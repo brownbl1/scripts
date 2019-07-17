@@ -75,5 +75,8 @@ ke() {
   kubectl exec -it $1 powershell
 }
 
+alias az='az.cmd'
+alias k='kubectl'
+
 # cp .bashrc ~
 # when done editing
