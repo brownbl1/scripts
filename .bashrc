@@ -78,5 +78,11 @@ ke() {
 alias az='az.cmd'
 alias k='kubectl'
 
-# cp .bashrc ~
+# project specific functions
+cppw() {
+  cp "D:\dev\_bentley\pwecplugin\out\Winx64\Build\Dms\build\BentleyMasProviderPW\obj\PWWSGPluginInstaller\BentleyWSGProjectWisePlugin.msi" \
+  "D:\dev\_bentley\ProjectWiseLancaster\di-container\bin\plugin"
+}
+
+# cp scripts/.bashrc ~
 # when done editing
