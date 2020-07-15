@@ -15,7 +15,7 @@ alias la='ls -a'
 
 alias e.='explorer .'
 
-alias spblock='forever start ~/cron/sab.json'
+alias spblock='pm2 start /d/dev/_personal/spotify-blocker/src/index.js'
 
 PROMPT_COMMAND='history -a'
 HISTCONTROL='ignoredups'
@@ -67,6 +67,16 @@ inject_dir() {
     inject $i
     rm $i
   done
+}
+
+alias ffmpeg='/d/port/ffmpeg-4.3-win64-static/bin/ffmpeg'
+
+ffmerge() {
+  ffmpeg -i $1 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
+  ffmpeg -i $2 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
+  ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+  
+  rm intermediate1.ts intermediate2.ts
 }
 
 # k8s functions
