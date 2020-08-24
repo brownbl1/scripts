@@ -79,6 +79,11 @@ ffmerge() {
   rm intermediate1.ts intermediate2.ts
 }
 
+zip() {
+  # get county from zip code
+  node /d/dev/_personal/parks/zips/index.js $@
+}
+
 # k8s functions
 
 ke() {
