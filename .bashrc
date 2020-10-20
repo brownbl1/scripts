@@ -21,7 +21,7 @@ PROMPT_COMMAND='history -a'
 HISTCONTROL='ignoredups'
 
 set_ip () {
-  wifi=$(ip | grep 'Wi-Fi') # get specific line
+  wifi=$(ip | grep 'Wi-Fi:') # get specific line
   output=$(echo $wifi | sed 's/\x1b\[[0-9;]*m//g') # strip color codes
   ip=$(echo $output | sed 's/.*\s//') # parse ip address
   
